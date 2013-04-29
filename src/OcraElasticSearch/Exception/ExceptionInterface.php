@@ -16,24 +16,14 @@
  * and is licensed under the MIT license.
  */
 
-namespace OcraElasticSearch;
-
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+namespace OcraElasticSearch\Exception;
 
 /**
- * OcraElasticSearch module - provides an abstraction layer to use ElasticSearch
- * combined with a generic Doctrine ObjectRepository
+ * Base exception interface for OcraElasticSearch
  *
  * @author  Marco Pivetta <ocramius@gmail.com>
  * @license MIT
  */
-class Module implements ConfigProviderInterface
+interface ExceptionInterface
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function getConfig()
-    {
-        return include_once __DIR__ . '/../../config/module.config.php';
-    }
 }

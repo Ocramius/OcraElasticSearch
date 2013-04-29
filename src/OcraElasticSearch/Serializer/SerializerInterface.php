@@ -16,24 +16,24 @@
  * and is licensed under the MIT license.
  */
 
-namespace OcraElasticSearch;
+namespace OcraElasticSearch\Serializer;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Doctrine\Common\Collections\Criteria;
 
 /**
- * OcraElasticSearch module - provides an abstraction layer to use ElasticSearch
- * combined with a generic Doctrine ObjectRepository
+ * Interface for objects capable of converting objects to arrays
  *
  * @author  Marco Pivetta <ocramius@gmail.com>
  * @license MIT
  */
-class Module implements ConfigProviderInterface
+interface SerializerInterface
 {
     /**
-     * {@inheritDoc}
+     * @param  object $object
+     *
+     * @throws \OcraElasticSearch\Exception\UnknownObjectTypeException when an unknown object type is provided
+     *
+     * @return array
      */
-    public function getConfig()
-    {
-        return include_once __DIR__ . '/../../config/module.config.php';
-    }
+    public function getIdentifier($object);
 }

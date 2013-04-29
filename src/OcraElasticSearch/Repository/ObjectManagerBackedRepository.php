@@ -16,24 +16,40 @@
  * and is licensed under the MIT license.
  */
 
-namespace OcraElasticSearch;
+namespace OcraElasticSearch\Repository;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Doctrine\Common\Collections\Criteria;
+use Doctrine\Common\Collections\Selectable;
+use Doctrine\Common\Persistence\ObjectManager;
 
 /**
- * OcraElasticSearch module - provides an abstraction layer to use ElasticSearch
- * combined with a generic Doctrine ObjectRepository
+ * Repository capable of searching data in an ElasticSearch repository and retrieving it
+ * as object by using a backing ObjectRepository
  *
  * @author  Marco Pivetta <ocramius@gmail.com>
  * @license MIT
  */
-class Module implements ConfigProviderInterface
+class ObjectManagerBackedRepository implements Selectable
 {
+    /**
+     * @var \Doctrine\Common\Persistence\ObjectManager
+     */
+    protected $objectManager;
+
+    /**
+     * @param \Doctrine\Common\Persistence\ObjectManager $objectManager
+     */
+    public function __construct(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
+    }
+
     /**
      * {@inheritDoc}
      */
-    public function getConfig()
+    function matching(Criteria $criteria)
     {
-        return include_once __DIR__ . '/../../config/module.config.php';
+        // @TODO implement
+        throw new \BadMethodCallException('Not yet implemented');
     }
 }

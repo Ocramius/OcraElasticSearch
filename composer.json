@@ -20,6 +20,7 @@
         "php":                               ">=5.3.3",
         "ruflin/Elastica":                   "~0.19",
         "doctrine/collections":              "~1.0",
+        "doctrine/common":                   "~2.4",
         "zendframework/zend-console":        "~2.1",
         "zendframework/zend-modulemanager":  "~2.1",
         "zendframework/zend-servicemanager": "~2.1",
