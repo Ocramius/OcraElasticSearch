@@ -1,0 +1,7 @@
+.idea
+cache.properties
+atlassian-ide-plugin.xml
+composer.phar
+php-cs-fixer.phar
+composer.lock
+vendor

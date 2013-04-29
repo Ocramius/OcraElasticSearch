@@ -1,0 +1,42 @@
+{
+    "name": "ocramius/ocra-elastic-search",
+    "description": "Elastic search Module for Zend Framework 2 applications based on Doctrine's ObjectManager",
+    "keywords": [
+        "ES",
+        "ElasticSearch",
+        "ZF2",
+        "ORM",
+        "ODM"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name":  "Marco Pivetta",
+            "email": "ocramius@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":                               ">=5.3.3",
+        "ruflin/Elastica":                   "~0.19",
+        "doctrine/collections":              "~1.0",
+        "zendframework/zend-console":        "~2.1",
+        "zendframework/zend-modulemanager":  "~2.1",
+        "zendframework/zend-servicemanager": "~2.1",
+        "zendframework/zend-http":           "~2.1",
+        "zendframework/zend-mvc":            "~2.1",
+        "zendframework/zend-stdlib":         "~2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit":           "~3.7",
+        "phpmd/phpmd":               "~1.4",
+        "squizlabs/php_codesniffer": "~1.4",
+        "phploc/phploc":             "~1.7",
+        "pdepend/pdepend":           "~1.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "OcraElasticSearch\\": "src/"
+        }
+    }
+}

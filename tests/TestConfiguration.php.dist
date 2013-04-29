@@ -1,0 +1,12 @@
+<?php
+return array(
+    'modules' => array(
+        'OcraElasticSearchTest',
+    ),
+    'module_listener_options' => array(
+        'config_glob_paths' => array(
+            __DIR__ . '/{,*.}{testing,global,local}.config.php',
+        ),
+        'module_paths' => array(),
+    ),
+);
