@@ -31,7 +31,7 @@ use Elastica\Index;
 interface ManagerInterface
 {
     /**
-     * @param  object $object
+     * @param object $object
      *
      * @throws \OcraElasticSearch\Exception\UnknownObjectTypeException when an unknown object type is provided
      *

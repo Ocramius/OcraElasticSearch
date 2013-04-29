@@ -47,7 +47,7 @@ class ObjectManagerBackedRepository implements Selectable
     /**
      * {@inheritDoc}
      */
-    function matching(Criteria $criteria)
+    public function matching(Criteria $criteria)
     {
         // @TODO implement
         throw new \BadMethodCallException('Not yet implemented');

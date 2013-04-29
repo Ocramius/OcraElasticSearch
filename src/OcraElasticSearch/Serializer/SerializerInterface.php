@@ -18,8 +18,6 @@
 
 namespace OcraElasticSearch\Serializer;
 
-use Doctrine\Common\Collections\Criteria;
-
 /**
  * Interface for objects capable of converting objects to arrays
  *
@@ -29,7 +27,7 @@ use Doctrine\Common\Collections\Criteria;
 interface SerializerInterface
 {
     /**
-     * @param  object $object
+     * @param object $object
      *
      * @throws \OcraElasticSearch\Exception\UnknownObjectTypeException when an unknown object type is provided
      *

@@ -18,9 +18,7 @@
 
 namespace OcraElasticSearch\Criteria;
 
-
 use Doctrine\Common\Collections\Expr\Comparison;
-use Doctrine\Common\Collections\Expr\ExpressionVisitor;
 
 /**
  * {@inheritDoc}
