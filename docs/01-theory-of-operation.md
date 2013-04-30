@@ -38,20 +38,20 @@ Or
 
 Here is apseudo-UML graph of the current architecture:
 
-![OcraElasticSearch Architecture](http://yuml.me/6d6d9aa4.svg)
+![OcraElasticSearch Architecture](http://yuml.me/e77eebb4.svg)
 
 <!--
 YUML syntax
 
-[Client Application]reads/writes->[Doctrine.Common.Persistence.ObjectManager],
-[Client Application]reads->[OcraElasticSearch.Repository.ElasticaTypeRepository],
-[Client Application]reads->[OcraElasticSearch.Repository.ObjectManagerBackedRepository],
-[OcraElasticSearch.Manager.ManagerInterface]writes->[Elastica.Type],
-[OcraElasticSearch.Repository.ElasticaTypeRepository]reads->[Elastica.Type],
-[OcraElasticSearch.Repository.ObjectManagerBackedRepository]reads->[OcraElasticSearch.Repository.ElasticaTypeRepository],
-[OcraElasticSearch.Repository.ObjectManagerBackedRepository]reads->[Doctrine.Common.Persistence.ObjectManager],
-[OcraElasticSearch.Listener.ObjectSynchronizerInterface]listens->[Doctrine.Common.Persistence.ObjectManager],
-[OcraElasticSearch.Listener.ObjectSynchronizerInterface]writes->[OcraElasticSearch.Manager.ManagerInterface],
-[OcraElasticSearch.Manager.ManagerInterface]consumes->[OcraElasticSearch.Serializer.IdentifierExtractorInterface],
-[OcraElasticSearch.Manager.ManagerInterface]consumes->[OcraElasticSearch.Serializer.SerializerInterface],
+[Client Application{bg:red}]reads/writes->[Doctrine.Common.Persistence.ObjectManager{bg:orange}],
+[Client Application{bg:red}]reads->[OcraElasticSearch.Repository.ElasticaTypeRepository{bg:green}],
+[Client Application{bg:red}]reads->[OcraElasticSearch.Repository.ObjectManagerBackedRepository{bg:green}],
+[OcraElasticSearch.Manager.ManagerInterface{bg:green}]writes->[Elastica.Type{bg:blue}],
+[OcraElasticSearch.Repository.ElasticaTypeRepository{bg:green}]reads->[Elastica.Type{bg:blue}],
+[OcraElasticSearch.Repository.ObjectManagerBackedRepository{bg:green}]reads->[OcraElasticSearch.Repository.ElasticaTypeRepository{bg:green}],
+[OcraElasticSearch.Repository.ObjectManagerBackedRepository{bg:green}]reads->[Doctrine.Common.Persistence.ObjectManager{bg:orange}],
+[OcraElasticSearch.Listener.ObjectSynchronizerInterface{bg:green}]listens->[Doctrine.Common.Persistence.ObjectManager{bg:orange}],
+[OcraElasticSearch.Listener.ObjectSynchronizerInterface{bg:green}]writes->[OcraElasticSearch.Manager.ManagerInterface{bg:green}],
+[OcraElasticSearch.Manager.ManagerInterface{bg:green}]consumes->[OcraElasticSearch.Serializer.IdentifierExtractorInterface{bg:green}],
+[OcraElasticSearch.Manager.ManagerInterface{bg:green}]consumes->[OcraElasticSearch.Serializer.SerializerInterface{bg:green}],
 -->
