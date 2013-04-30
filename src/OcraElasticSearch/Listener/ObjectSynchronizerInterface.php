@@ -16,24 +16,24 @@
  * and is licensed under the MIT license.
  */
 
-namespace OcraElasticSearch;
+namespace OcraElasticSearch\Listener;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 
 /**
- * OcraElasticSearch module - provides an abstraction layer to use ElasticSearch
- * combined with a generic Doctrine ObjectRepository
+ * Interface to allow synchronization of object statuses with the ElasticSearch index
  *
  * @author  Marco Pivetta <ocramius@gmail.com>
  * @license MIT
  */
-class Module implements ConfigProviderInterface
+interface ObjectSynchronizerInterface
 {
     /**
-     * {@inheritDoc}
+     * Synchronize the given event with the index
+     *
+     * @param \Doctrine\Common\Persistence\Event\LifecycleEventArgs $persistenceEvent
+     *
+     * @return void
      */
-    public function getConfig()
-    {
-        return include_once __DIR__ . '/../../config/module.config.php';
-    }
+    public function synchronize(LifecycleEventArgs $persistenceEvent);
 }
