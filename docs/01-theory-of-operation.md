@@ -38,7 +38,7 @@ Or
 
 Here is apseudo-UML graph of the current architecture:
 
-![OcraElasticSearch Architecture](http://yuml.me6d6d9aa4.svg)
+![OcraElasticSearch Architecture](http://yuml.me/6d6d9aa4.svg)
 
 <!--
 YUML syntax
