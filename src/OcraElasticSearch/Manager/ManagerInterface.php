@@ -16,24 +16,26 @@
  * and is licensed under the MIT license.
  */
 
-namespace OcraElasticSearch;
+namespace OcraElasticSearch\Manager;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Elastica\Index;
 
 /**
- * OcraElasticSearch module - provides an abstraction layer to use ElasticSearch
- * combined with a generic Doctrine ObjectRepository
+ * Interface for a simple document manager backed by an ElasticSearch index
  *
  * @author  Marco Pivetta <ocramius@gmail.com>
  * @license MIT
+ *
+ * @TODO consider managing repositories in here or in a dedicated repository
  */
-class Module implements ConfigProviderInterface
+interface ManagerInterface
 {
     /**
-     * {@inheritDoc}
+     * @param object $object
+     *
+     * @throws \OcraElasticSearch\Exception\UnknownObjectTypeException when an unknown object type is provided
+     *
+     * @return string the saved object's identifier
      */
-    public function getConfig()
-    {
-        return include_once __DIR__ . '/../../config/module.config.php';
-    }
+    public function save($object);
 }

@@ -16,24 +16,30 @@
  * and is licensed under the MIT license.
  */
 
-namespace OcraElasticSearch;
+namespace OcraElasticSearch\Criteria;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Doctrine\Common\Collections\Expr\Comparison;
 
 /**
- * OcraElasticSearch module - provides an abstraction layer to use ElasticSearch
- * combined with a generic Doctrine ObjectRepository
+ * {@inheritDoc}
+ *
+ * Expression that represents a query string to be looked up
  *
  * @author  Marco Pivetta <ocramius@gmail.com>
  * @license MIT
  */
-class Module implements ConfigProviderInterface
+class QueryStringExpression extends Comparison
 {
+    const QUERY_STRING = 'query_string';
+
     /**
      * {@inheritDoc}
+     *
+     * @param string $field
+     * @param mixed  $value
      */
-    public function getConfig()
+    public function __construct($field, $value)
     {
-        return include_once __DIR__ . '/../../config/module.config.php';
+        parent::__construct($field, static::QUERY_STRING, $value);
     }
 }
