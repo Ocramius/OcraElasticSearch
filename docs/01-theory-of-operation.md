@@ -36,7 +36,7 @@ Or
 
 ## Wrapping it up
 
-Here is apseudo-UML graph of the current architecture:
+Here is a pseudo-UML graph of the current architecture:
 
 ![OcraElasticSearch Architecture](http://yuml.me/e77eebb4.svg)
 
